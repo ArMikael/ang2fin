@@ -1,12 +1,36 @@
 .users-list {
   list-style: none;
+  margin: 10px 0 40px 0;
   padding: 0;
+  border: 1px solid gainsboro;
+}
+
+.table-header {
+  height: 30px;
+  line-height: 30px;
+  background-color: #C1C900;
+  font-weight: 600;
+}
+
+.user-row {
+  height: 30px;
+  line-height: 30px;
+}
+
+.user-row:not(:last-child) {
+  border-bottom: 1px solid gainsboro;
+}
+
+.user-row:nth-child(odd) {
+  background-color: beige;
 }
 
 .user-name,
 .user-email {
   display: inline-block;
+  margin-right: -4px;
   padding: 0 20px;
+  border-right: 1px solid gainsboro;
 }
 
 .user-name {

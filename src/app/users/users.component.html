@@ -1,5 +1,10 @@
 <h2>Users Component</h2>
 <ul class="users-list">
+  <li class="table-header">
+    <div class="user-name">Name</div>
+    <div class="user-email">Email</div>
+  </li>
+
   <li class="user-row" *ngFor="let user of users">
     <div class="user-name">{{ user.name }}</div>
     <div class="user-email">{{ user.email }}</div>
