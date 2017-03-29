@@ -1,5 +1,4 @@
-import { Component, NgModule } from '@angular/core';
-import { routing } from './app.routes';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
