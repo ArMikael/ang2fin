@@ -10,13 +10,15 @@ import { NavBarComponent } from './navbar/navbar.component';
 import { UsersComponent } from "./users/users.component";
 import { PostsComponent } from './posts/posts.component';
 import { UsersService } from "./users/users.service";
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     UsersComponent,
-    PostsComponent
+    PostsComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
