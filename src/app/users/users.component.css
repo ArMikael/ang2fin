@@ -3,6 +3,7 @@
   margin: 10px 0 40px 0;
   padding: 0;
   border: 1px solid gainsboro;
+  width: 800px;
 }
 
 .table-header {
@@ -26,7 +27,9 @@
 }
 
 .user-name,
-.user-email {
+.user-email,
+.user-edit,
+.user-delete {
   display: inline-block;
   margin-right: -4px;
   padding: 0 20px;
@@ -34,9 +37,17 @@
 }
 
 .user-name {
-  width: 14%;
+  width: 38%;
 }
 
 .user-email {
-  width: 14%;
+  width: 38%;
+}
+
+.user-edit {
+  width: 12%;
+}
+
+.user-delete {
+  width: 12%;
 }
