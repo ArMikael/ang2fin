@@ -7,3 +7,11 @@
 .address-fieldset {
   margin-top: 20px;
 }
+
+.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+
+.add-user-form.ng-invalid {
+  border: none;
+}
