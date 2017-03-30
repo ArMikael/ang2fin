@@ -12,4 +12,10 @@ export class AddUserComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit(form) {
+    console.log(form);
+    console.log(form.value.name);
+    console.log(form.value.email);
+  }
+
 }

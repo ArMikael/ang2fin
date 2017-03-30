@@ -1,40 +1,36 @@
 <h2>
   Add User
 </h2>
-<form action="" class="add-user-form">
+<form class="add-user-form" #addUserForm="ngForm" (ngSubmit)="onSubmit(addUserForm.form)">
   <fieldset id="user">
     <legend>User</legend>
     <div class="form-group">
-      <label for=""></label>
-      <input class="form-control" type="text">
+      <label for="name"></label>
+      <input id="name" name="name" ngModel class="form-control" type="text" required minlength="3">
     </div>
     <div class="form-group">
-      <label for=""></label>
-      <input class="form-control" type="text">
+      <label for="email"></label>
+      <input id="email" name="email" ngModel class="form-control" type="text" required>
     </div>
     <div class="form-group">
-      <label for=""></label>
-      <input class="form-control" type="text">
-    </div>
-    <div class="form-group">
-      <label for=""></label>
-      <input class="form-control" type="text">
+      <label for="phone"></label>
+      <input id="phone" name="phone" ngModel class="form-control" type="text">
     </div>
   </fieldset>
 
   <fieldset class="address-fieldset" id="address">
     <legend>Address</legend>
     <div class="form-group">
-      <label for=""></label>
-      <input class="form-control" type="text">
+      <label for="street"></label>
+      <input id="street" name="street" ngModel class="form-control" type="text">
     </div>
     <div class="form-group">
-      <label for=""></label>
-      <input class="form-control" type="text">
+      <label for="apartment"></label>
+      <input id="apartment" name="apartment" ngModel class="form-control" type="text">
     </div>
     <div class="form-group">
-      <label for=""></label>
-      <input class="form-control" type="text">
+      <label for="city"></label>
+      <input id="city" name="city" ngModel class="form-control" type="text">
     </div>
   </fieldset>
   <button class="btn btn-primary" type="submit">Save</button>
