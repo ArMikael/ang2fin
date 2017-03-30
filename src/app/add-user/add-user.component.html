@@ -33,5 +33,5 @@
       <input id="city" name="city" ngModel class="form-control" type="text">
     </div>
   </fieldset>
-  <button class="btn btn-primary" type="submit">Save</button>
+  <button class="btn btn-primary" type="submit" [disabled]="!addUserForm.valid">Save</button>
 </form>
