@@ -13,8 +13,16 @@
   <li class="user-row" *ngFor="let user of users">
     <div class="user-name">{{ user.name }}</div>
     <div class="user-email">{{ user.email }}</div>
-    <div class="user-edit"></div>
-    <div class="user-delete"></div>
+    <div class="user-edit">
+      <a href="#">
+        <i class="glyphicon glyphicon-edit"></i>
+      </a>
+    </div>
+    <div class="user-delete">
+      <a href="#">
+        <i class="glyphicon glyphicon-remove"></i>
+      </a>
+    </div>
   </li>
 </ul>
 
