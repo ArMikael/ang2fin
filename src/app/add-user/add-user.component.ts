@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { CanDeactivate } from '@angular/router';
+import { Component } from '@angular/core';
+import { Router, CanDeactivate } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { UsersService } from '../users/users.service';
+
 
 @Component({
   selector: 'app-add-user',
@@ -8,10 +12,25 @@ import { CanDeactivate } from '@angular/router';
 })
 export class AddUserComponent implements CanDeactivate<any> {
   canDeactivate: any;
+  form: any;
 
-  constructor() { }
+  constructor(
+    fb: FormBuilder,
+    private router: Router,
+    private usersService: UsersService
+  ) {
+    this.form = fb.group({
+      name: ['', Validators.required],
+      email: [],
+      phone: [],
+      address: fb.group({
+        street: [],
+        suite: [],
+        city: [],
+        zipcode: []
+      })
+    })
 
-  ngOnInit() {
   }
 
   onSubmit(form) {
@@ -21,8 +40,16 @@ export class AddUserComponent implements CanDeactivate<any> {
   }
 
   routerCanDeactivate(next, prev) {
-    console.log(next)
+    console.log(next);
+
     return confirm('Are you sure?')
   };
+
+  save() {
+    this.usersService.addUser(this.form.value)
+      .subscribe(res => {
+        this.router.navigate(['Users']);
+      });
+  }
 
 }
