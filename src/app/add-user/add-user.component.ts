@@ -54,4 +54,8 @@ export class AddUserComponent {
       });
   }
 
+  reset() {
+    this.userForm.reset();
+  }
+
 }
