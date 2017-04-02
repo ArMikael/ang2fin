@@ -13,24 +13,25 @@ import { UsersService } from '../users/users.service';
 })
 export class AddUserComponent {
   // canDeactivate: any;
-  form: any;
+  userForm: any;
 
   constructor(
-    // fb: FormBuilder,
+    private fb: FormBuilder,
     private router: Router,
     private usersService: UsersService
   ) {
-    //this.form = fb.group({
-      // name: ['', Validators.required],
-      // email: [],
-      // phone: [],
-      // address: fb.group({
-      //   street: [],
-      //   suite: [],
-      //   city: [],
-      //   zipcode: []
-      // })
-    //})
+
+    this.userForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', Validators.required],
+      phone: [],
+      address: this.fb.group({
+        street: [],
+        suite: [],
+        city: [],
+        zipcode: []
+      })
+    });
 
   }
 
@@ -47,7 +48,7 @@ export class AddUserComponent {
   };
 
   save() {
-    this.usersService.addUser(this.form.value)
+    this.usersService.addUser(this.userForm.value)
       .subscribe(res => {
         this.router.navigate(['Users']);
       });
