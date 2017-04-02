@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, CanDeactivate } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
 
 import { UsersService } from '../users/users.service';
 
@@ -10,26 +11,26 @@ import { UsersService } from '../users/users.service';
   templateUrl: './add-user.component.html',
   styleUrls: ['./add-user.component.css']
 })
-export class AddUserComponent implements CanDeactivate<any> {
-  canDeactivate: any;
+export class AddUserComponent {
+  // canDeactivate: any;
   form: any;
 
   constructor(
-    fb: FormBuilder,
+    // fb: FormBuilder,
     private router: Router,
     private usersService: UsersService
   ) {
-    this.form = fb.group({
-      name: ['', Validators.required],
-      email: [],
-      phone: [],
-      address: fb.group({
-        street: [],
-        suite: [],
-        city: [],
-        zipcode: []
-      })
-    })
+    //this.form = fb.group({
+      // name: ['', Validators.required],
+      // email: [],
+      // phone: [],
+      // address: fb.group({
+      //   street: [],
+      //   suite: [],
+      //   city: [],
+      //   zipcode: []
+      // })
+    //})
 
   }
 
@@ -39,7 +40,7 @@ export class AddUserComponent implements CanDeactivate<any> {
     console.log(form.value.email);
   }
 
-  routerCanDeactivate(next, prev) {
+  routerCanDeactivate(next, prev){
     console.log(next);
 
     return confirm('Are you sure?')
