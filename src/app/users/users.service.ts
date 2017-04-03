@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from "@angular/http";
+import { Http, Response } from "@angular/http";
 import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/map';
@@ -15,6 +15,10 @@ interface IUser {
 export class UsersService {
   private usersUrl = 'https://jsonplaceholder.typicode.com/users';
 
+  private handleServerError(error: Response) {
+    return Observable.throw(error.json().error || 'Server error');
+  }
+
   constructor(private http: Http) { }
 
   getUsers() {
@@ -22,9 +26,14 @@ export class UsersService {
       .map(res => res.json());
   }
 
-  addUser(userData): Observable<IUser> {
+  addUser(userData) {
     console.log('Data were send', userData);
 
-    return userData;
+    return this.http.get(userData)
+      .map(res => res.json())
+      .subscribe(
+        data => console.log(data),
+        err => console.log(err)
+      );
   }
 }

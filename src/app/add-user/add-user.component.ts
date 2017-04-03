@@ -4,7 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 
 import { UsersService } from '../users/users.service';
-
+import { User } from '../classes/user';
 
 @Component({
   selector: 'app-add-user',
@@ -39,6 +39,12 @@ export class AddUserComponent {
     console.log(form);
     console.log(form.value.name);
     console.log(form.value.email);
+
+    this.userForm.value.name = form.value.name;
+    this.userForm.value.email = form.value.email;
+    this.userForm.value.phone = form.value.phone;
+
+    this.usersService.addUser(this.userForm.value);
   }
 
   routerCanDeactivate(next, prev){
@@ -47,12 +53,12 @@ export class AddUserComponent {
     return confirm('Are you sure?')
   };
 
-  save() {
-    this.usersService.addUser(this.userForm.value)
-      .subscribe(res => {
-        this.router.navigate(['Users']);
-      });
-  }
+  // save() {
+  //   this.usersService.addUser(this.userForm.value)
+  //     .subscribe(res => {
+  //       this.router.navigate(['Users']);
+  //     });
+  // }
 
   reset() {
     this.userForm.reset();
