@@ -11,8 +11,7 @@ import { User } from '../classes/user';
   templateUrl: './add-user.component.html',
   styleUrls: ['./add-user.component.css']
 })
-export class AddUserComponent {
-  // canDeactivate: any;
+export class AddUserComponent implements CanDeactivate<boolean> {
   userForm: any;
 
   constructor(
@@ -47,7 +46,7 @@ export class AddUserComponent {
     this.usersService.addUser(this.userForm.value);
   }
 
-  routerCanDeactivate(next, prev){
+  canDeactivate(next, prev){
     console.log(next);
 
     return confirm('Are you sure?')

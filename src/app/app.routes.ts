@@ -1,17 +1,18 @@
-import { Routes, RouterModule, CanDeactivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Routes, RouterModule, CanDeactivate } from '@angular/router';
 import { UsersComponent } from './users/users.component';
 import { PostsComponent } from './posts/posts.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { AppComponent } from './app.component';
 import { Observable } from "rxjs/observable";
 
-// export class Test implements CanDeactivate<AppComponent>{
-//   canDeactivate(component: AppComponent, route: ActivatedRouteSnapshot,
-//                 state: RouterStateSnapshot): Observable<boolean> | boolean{
-//     console.log("in");
-//     return false;
-//   }
-// }
+export class StopNav implements CanDeactivate<boolean>{
+  canDeactivate(component: AppComponent): boolean{
+    console.log("-==CanDEACTIVATE==-");
+
+    return confirm('Are you sure?');
+    // return false;
+  }
+}
 
 const routes: Routes = [
   {
@@ -25,7 +26,7 @@ const routes: Routes = [
   {
     path: 'users/new',
     component: AddUserComponent,
-    // canDeactivate: [Test]
+    canDeactivate: [StopNav]
   },
   {
     path: '',
