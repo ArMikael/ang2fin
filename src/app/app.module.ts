@@ -12,6 +12,7 @@ import { UsersComponent } from "./users/users.component";
 import { PostsComponent } from './posts/posts.component';
 import { UsersService } from "./users/users.service";
 import { AddUserComponent } from './add-user/add-user.component';
+import { Courses } from "./courses/courses.component";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AddUserComponent } from './add-user/add-user.component';
     NavBarComponent,
     UsersComponent,
     PostsComponent,
-    AddUserComponent
+    AddUserComponent,
+    Courses
   ],
   imports: [
     BrowserModule,
