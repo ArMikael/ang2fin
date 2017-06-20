@@ -12,7 +12,8 @@ import { UsersComponent } from "./users/users.component";
 import { PostsComponent } from './posts/posts.component';
 import { UsersService } from "./users/users.service";
 import { AddUserComponent } from './add-user/add-user.component';
-import { Courses } from "./courses/courses.component";
+import { CoursesComponent } from "./courses/courses.component";
+import { CourseComponent } from './courses/course.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { Courses } from "./courses/courses.component";
     UsersComponent,
     PostsComponent,
     AddUserComponent,
-    Courses
+    CoursesComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,

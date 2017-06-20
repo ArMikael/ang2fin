@@ -2,7 +2,7 @@ import { Routes, RouterModule, CanDeactivate } from '@angular/router';
 import { UsersComponent } from './users/users.component';
 import { PostsComponent } from './posts/posts.component';
 import { AddUserComponent } from './add-user/add-user.component';
-import { Courses } from './courses/courses.component';
+import { CoursesComponent } from './courses/courses.component';
 import { AppComponent } from './app.component';
 import { Observable } from "rxjs/observable";
 
@@ -31,7 +31,7 @@ const routes: Routes = [
   },
   {
     path: 'courses',
-    component: Courses
+    component: CoursesComponent
   },
   {
     path: '',
